@@ -23,3 +23,32 @@ df.drop('Star3',axis=1,inplace=True)
 df.drop('Star4',axis=1,inplace=True)
 
 st.dataframe(df)
+
+# df.sort_values(["Released_Year"],
+#                     axis=0,
+#                     ascending=[False],
+#                     inplace=True)
+
+# df.sort_values(["IMDB_Rating"],
+#                     axis=0,
+#                     ascending=[True],
+#                     inplace=True)
+
+# df.sort_values(["Gross"],
+#                     axis=0,
+#                     ascending=[False],
+#                     inplace=True)
+
+st.sidebar.header("Filter options")
+year = st.sidebar.multiselect(
+    "Select by Year of Release",
+    options = df["Released_Year"].unique(),
+)
+
+Runtime = st.sidebar.multiselect(
+    "Select by Runtime",
+    options = df["Runtime"].unique(),
+)
+
+
+# Mainpage
